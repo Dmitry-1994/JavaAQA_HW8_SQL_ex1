@@ -13,12 +13,12 @@ public class LoginPage {
     private final SelenideElement button = $("[data-test-id=action-login] .button__content");
     private final SelenideElement massageError = $("[data-test-id=error-notification] .notification__content");
 
-    public VerPage validLogin(DataGenerator.loginInfo loginInfo) {
+    public VerPage validLogin(DataGenerator.LoginInfo loginInfo) {
         noValidlogin(loginInfo);
         return new VerPage();
     }
 
-    public void noValidlogin(DataGenerator.loginInfo loginInfo) {
+    public void noValidlogin(DataGenerator.LoginInfo loginInfo) {
         loginField.setValue(loginInfo.getLogin());
         passwordField.setValue(loginInfo.getPassword());
         button.click();

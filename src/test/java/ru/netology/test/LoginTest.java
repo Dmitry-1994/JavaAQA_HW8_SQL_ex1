@@ -16,7 +16,7 @@ import static ru.netology.data.SQLHelper.*;
 
 public class LoginTest {
     LoginPage loginPage;
-    DataGenerator.loginInfo loginInfo = DataGenerator.getTestUser();
+    DataGenerator.LoginInfo loginInfo = DataGenerator.getTestUser();
 
     @BeforeEach
     void setUp() {
@@ -35,8 +35,8 @@ public class LoginTest {
 
     @Test
     void successLoginWithTestData() {
-        var VerPage = loginPage.validLogin(loginInfo);
-        VerPage.validVer(getVerCode());
+        var verPage = loginPage.validLogin(loginInfo);
+        verPage.validVer(getVerCode());
     }
 
     @Test
@@ -47,8 +47,8 @@ public class LoginTest {
 
     @Test
     void negativeWithInvalidVerCode() {
-        var VerPage = loginPage.validLogin(loginInfo);
-        VerPage.notValidVer(getRandomVerCode().getCode());
-        VerPage.massageError("Ошибка! Неверно указан код! Попробуйте ещё раз.");
+        var verPage = loginPage.validLogin(loginInfo);
+        verPage.notValidVer(getRandomVerCode().getCode());
+        verPage.massageError("Ошибка! Неверно указан код! Попробуйте ещё раз.");
     }
 }

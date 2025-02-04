@@ -22,12 +22,12 @@ public class DataGenerator {
         return faker.internet().password();
     }
 
-    public static loginInfo getRandomUser() {
-        return new loginInfo(getRandomLogin(), getRandomPass());
+    public static LoginInfo getRandomUser() {
+        return new LoginInfo(getRandomLogin(), getRandomPass());
     }
 
-    public static loginInfo getTestUser() {
-        return new loginInfo("vasya", "qwerty123");
+    public static LoginInfo getTestUser() {
+        return new LoginInfo("vasya", "qwerty123");
     }
 
     public static VerificationCode getRandomVerCode() {
@@ -35,7 +35,7 @@ public class DataGenerator {
     }
 
     @Value
-    public static class loginInfo {
+    public static class LoginInfo {
         String login;
         String password;
     }
